@@ -1,0 +1,86 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body, html {
+    height: 100%;
+    background-color: #000;
+    color: #ffffff;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Terminal Header */
+.terminal-header {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    background-color: #333;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.red { background-color: #ff605c; }
+.yellow { background-color: #ffbd44; }
+.green { background-color: #00ca4e; }
+
+/* CRT Frame for Full-Screen Display */
+.crt-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.screen {
+    width: 80%;
+    max-width: 1000px;
+    background: #000;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+/* Text Alignment for Boot-Up and Command Lines */
+.text-container {
+    width: 60%;
+    text-align: left; /* Align text to the left */
+    color: #ffffff;
+    margin: auto;
+}
+
+/* Boot-up and command lines styling */
+.boot-line, .command-line {
+    display: none; /* Hidden initially for boot-up animation */
+    text-align: left;
+}
+
+.user { color: #50fa7b; } /* Green color for username */
+.at, .directory, .host { color: #ffffff; } /* White color for symbols */
+.highlight { color: #00ff00; cursor: pointer; text-decoration: underline; }
+
+/* Genie Effect */
+.genie-effect {
+    animation: genieEffect 1s backwards;
+}
+@keyframes genieEffect {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0.1) translateY(100vh); opacity: 0; }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebrahim Gulamali - CyberSecurity Specialist</title>
+    <link rel="stylesheet" href="intro-style.css">
+</head>
+<body>
+    <!-- Terminal Header with Mac-like Close, Minimize, Maximize -->
+    <div class="terminal-header">
+        <div class="circle red"></div>
+        <div class="circle yellow"></div>
+        <div class="circle green"></div>
+    </div>
+
+    <!-- CRT Monitor Frame for Linux-style Boot Sequence -->
+    <div class="crt-frame">
+        <div class="screen">
+            <div class="text-container">
+                <!-- Boot-up Animation Lines -->
+                <p class="boot-line">[ 0.000001] Initializing Terminal...</p>
+                <p class="boot-line">[ 0.000002] Authentication success</p>
+                <p class="boot-line">[ 0.000003] Welcome to CyberHub</p>
+                <p class="boot-line">[ 0.000004] User: ebrahim@cyberhub</p>
+                <!-- Main Terminal Text Prompt -->
+                <p class="command-line">
+                    <span class="user">ebrahim</span><span class="at">@</span><span class="host">cyberhub</span>:<span class="directory">~</span>$ Click <span class="highlight">Y</span> to continue...
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Boot-Up Animation -->
+    <script>
+        const bootLines = document.querySelectorAll('.boot-line');
+        const commandLines = document.querySelectorAll('.command-line');
+        let currentIndex = 0;
+
+        function showBootLines() {
+            if (currentIndex < bootLines.length) {
+                bootLines[currentIndex].style.display = 'block';
+                currentIndex++;
+                setTimeout(showBootLines, 500);
+            } else {
+                commandLines.forEach(line => line.style.display = 'block');
+            }
+        }
+        showBootLines();
+
+        document.querySelector(".highlight").addEventListener("click", () => {
+            document.querySelector(".crt-frame").classList.add("genie-effect");
+            setTimeout(() => { window.location.href = "main.html"; }, 1000);
+        });
+    </script>
+</body>
+</html>
